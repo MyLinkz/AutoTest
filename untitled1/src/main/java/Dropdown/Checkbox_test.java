@@ -1,4 +1,5 @@
 package Dropdown;
+
 import Initialization.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,11 @@ public class Checkbox_test extends Init {
             }
         } else {
             System.out.println("Checkbox1 chưa được chọn");
+            checkbox1.click(); // Chọn checkbox 2
+            Thread.sleep(1000);
+            if (checkbox1.isSelected()) {
+                System.out.println("Checkbox1 đã được chọn.");
+            }
         }
 
         //Checkbox 2
@@ -49,33 +55,12 @@ public class Checkbox_test extends Init {
             }
         } else {
             System.out.println("Checkbox2 chưa được chọn");
+            checkbox2.click(); // Chọn checkbox 2
+            Thread.sleep(1000);
+            if (checkbox2.isSelected()) {
+                System.out.println("Checkbox2 đã được chọn.");
+            }
         }
-
-        //  Kiểm tra cả hai checkbox đã chọn
-        if (checkbox1.isSelected() && checkbox2.isSelected()) {
-            System.out.println("Cả Checkbox1 và Checkbox2 đều đã chọn");
-        } else if (checkbox1.isSelected()) {
-            System.out.println("Chỉ Checkbox1 đã chọn");
-        } else if (checkbox2.isSelected()) {
-            System.out.println("Chỉ Checkbox2 đã chọn");
-        }
-        //Chọn lại cả hai checkbox trước khi kiểm tra
-        if (!checkbox1.isSelected()) {
-            checkbox1.click();  // Chọn lại checkbox1 nếu chưa được chọn
-        }
-        if (!checkbox2.isSelected()) {
-            checkbox2.click();  // Chọn lại checkbox2 nếu chưa được chọn
-        }
-
-        //  Kiểm tra cả hai checkbox đã bị bỏ chọn
-        if (!checkbox1.isSelected() && !checkbox2.isSelected()) {
-            System.out.println("Cả Checkbox1 và Checkbox2 đều đã bị bỏ chọn");
-        } else if (!checkbox1.isSelected()) {
-            System.out.println("Chỉ Checkbox1 đã bị bỏ chọn");
-        } else if (!checkbox2.isSelected()) {
-            System.out.println("Chỉ Checkbox2 đã bị bỏ chọn");
-        }
-
         TearDown();
     }
 }
