@@ -28,7 +28,6 @@ import org.openqa.selenium.WebElement;
                 System.out.println("Bạn đã chọn Blue");
             }
         }
-
         //Red
         WebElement button_radio_red = driver.findElement(By.id("red"));
         boolean isSelectedRed = button_radio_red.isSelected();
