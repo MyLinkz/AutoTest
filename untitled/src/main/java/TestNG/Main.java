@@ -1,5 +1,5 @@
-package org.example;
-
+package TestNG;
+import org.test
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
